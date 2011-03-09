@@ -1,0 +1,31 @@
+<?php $paginationControl = $this->paginationControl($this->paginator, 'All', '_partials/paginator.phtml') ?>
+
+<?php echo $paginationControl ?>
+
+<?php if (count($this->paginator)) : ?>
+<table class="data">
+    <thead>
+        <tr>
+            <th>Foo</th>
+            <th>Bar</th>
+            <th>Baz</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        /* @var $foo Application_Model_Foo */
+        foreach ($this->paginator as $foo) :
+        ?>
+        <tr>
+            <td><?php echo $this->escape($foo->getFoo()) ?></td>
+            <td><?php echo $this->escape($foo->getBar()) ?></td>
+            <td><?php echo $this->escape($foo->getBaz()) ?></td>
+        </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
+<?php else : ?>
+<p class="notice">No items found</p>
+<?php endif ?>
+
+<?php echo $paginationControl ?>

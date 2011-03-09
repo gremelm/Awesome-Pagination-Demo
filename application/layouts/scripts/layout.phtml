@@ -1,0 +1,19 @@
+<?php echo $this->doctype() ?>
+<html>
+    <head>
+        <?php
+        echo $this->headMeta()
+                ->prependHttpEquiv('Content-Type', 'text/html; charset=' . $this->getEncoding()) ?>
+        
+        <base href="<?php echo $this->serverUrl(), '/', $this->baseUrl() ?>">
+        
+        <?php echo $this->headTitle('Awesome Pagination')
+                ->setSeparator(' - ') ?>
+    </head>
+    <body>
+        <?php echo $this->layout()->content ?>
+        <?php echo $this->inlineScript()
+                ->prependFile('js/modernizr-1.7.min.js')
+                ->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js') ?>
+    </body>
+</html>
