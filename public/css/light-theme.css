@@ -20,6 +20,12 @@ body {
     overflow: hidden;
 }
 
+.paged-data {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
 .paginator {
     float: right;
 }
@@ -95,6 +101,7 @@ table.data {
     border: 1px solid #666;
     margin: 1em 0;
     font-size: 0.8em;
+    position: relative;
 }
 
 table.data th, table.data td {
@@ -109,4 +116,11 @@ table.data th {
 
 table.data td {
     border: 1px solid #666;
+}
+
+.loading {
+    background-image: url(../images/ajax-loader.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
 }

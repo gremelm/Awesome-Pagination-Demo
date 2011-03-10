@@ -2,7 +2,7 @@
 <div class="paginator">
     <div class="paginator-nav">
         <?php if (isset($this->previous)) : ?>
-        <a title="Previous" class="paginator-prev" href="<?php echo $this->url(array(
+        <a title="Previous" rel="prev" class="paginator-prev" href="<?php echo $this->url(array(
             'page' => $this->previous
         )) ?>">Previous</a>
         <?php else : ?>
@@ -14,8 +14,8 @@
         <li>
             <?php if ($page == $this->current) : ?>
             <span><?php echo $page ?></span>
-            <?php else : ?>
-            <a title="Page <?php echo $page ?>" href="<?php echo $this->url(array(
+            <?php else : $rel = $page > $this->current ? 'next' : 'prev'; ?>
+            <a title="Page <?php echo $page ?>" rel="<?php echo $rel ?>" href="<?php echo $this->url(array(
                 'page' => $page
             )) ?>"><?php echo $page ?></a>
             <?php endif ?>
@@ -24,7 +24,7 @@
     </ol>
     <div class="paginator-nav">
         <?php if (isset($this->next)) : ?>
-        <a title="Next" class="paginator-next" href="<?php echo $this->url(array(
+        <a title="Next" rel="next" class="paginator-next" href="<?php echo $this->url(array(
             'page' => $this->next
         )) ?>">Next</a>
         <?php else : ?>
