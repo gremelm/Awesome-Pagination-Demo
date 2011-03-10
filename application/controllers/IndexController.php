@@ -4,6 +4,8 @@ class IndexController extends Zend_Controller_Action
 {
     public function init()
     {
+        $this->_helper->ajaxContext->addActionContext('index', 'html')
+                                   ->initContext();
     }
 
     public function indexAction()
