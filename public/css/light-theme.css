@@ -12,12 +12,13 @@ body {
     margin: 1em auto;
 }
 
-.paged-data-container {
+#paged-data-container {
     border: 1px solid #666;
     padding: 1em;
     margin: 1em 0;
     background-color: #eaeaea;
     overflow: hidden;
+    position: relative;
 }
 
 .paged-data {
@@ -123,4 +124,14 @@ table.data td {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: .8;
 }

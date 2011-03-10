@@ -22,6 +22,7 @@
             </address>
         </div>
         <?php echo $this->inlineScript()
+                ->prependFile('js/modernizr-1.7.min.js')
                 ->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js') ?>
     </body>
 </html>
