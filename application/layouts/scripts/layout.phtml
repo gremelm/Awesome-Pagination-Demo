@@ -9,11 +9,17 @@
         
         <?php echo $this->headTitle('Awesome Pagination')
                 ->setSeparator(' - ') ?>
+        
+        <?php echo $this->headLink()->appendStylesheet('css/light-theme.css') ?>
     </head>
     <body>
-        <?php echo $this->layout()->content ?>
-        <?php echo $this->inlineScript()
-                ->prependFile('js/modernizr-1.7.min.js')
-                ->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js') ?>
+        <div id="page">
+            <?php echo $this->layout()->content ?>
+            
+            <address>
+                Filler text from <a href="http://chrisvalleskey.com/fillerama/" title="Fillerama">Fillerama</a>,
+                icons from <a href="http://dryicons.com/" title="Dry Icons">Dry Icons</a>
+            </address>
+        </div>
     </body>
 </html>

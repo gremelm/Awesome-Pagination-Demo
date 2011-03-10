@@ -1,6 +1,14 @@
 <?php if ($this->pageCount > 0) : ?>
-<div class="paginator-pages">
-    <p>Pages:</p>
+<div class="paginator">
+    <div class="paginator-nav">
+        <?php if (isset($this->previous)) : ?>
+        <a title="Previous" class="paginator-prev" href="<?php echo $this->url(array(
+            'page' => $this->previous
+        )) ?>">Previous</a>
+        <?php else : ?>
+        <span class="paginator-prev">Previous</span>
+        <?php endif ?>
+    </div>
     <ol>
         <?php foreach ($this->pagesInRange as $page) : ?>
         <li>
@@ -14,27 +22,14 @@
         </li>
         <?php endforeach ?>
     </ol>
-</div>
-<div class="paginator-nav">
-    <ul>
-        <li>
-            <?php if (isset($this->previous)) : ?>
-            <a title="Previous" class="paginator-prev" href="<?php echo $this->url(array(
-                'page' => $this->previous
-            )) ?>">Previous</a>
-            <?php else : ?>
-            <span class="paginator-prev">Previous</span>
-            <?php endif ?>
-        </li>
-        <li>
-            <?php if (isset($this->next)) : ?>
-            <a title="Next" class="paginator-next" href="<?php echo $this->url(array(
-                'page' => $this->next
-            )) ?>">Next</a>
-            <?php else : ?>
-            <span class="paginator-next">Next</span>
-            <?php endif ?>
-        </li>
-    </ul>
+    <div class="paginator-nav">
+        <?php if (isset($this->next)) : ?>
+        <a title="Next" class="paginator-next" href="<?php echo $this->url(array(
+            'page' => $this->next
+        )) ?>">Next</a>
+        <?php else : ?>
+        <span class="paginator-next">Next</span>
+        <?php endif ?>
+    </div>
 </div>
 <?php endif ?>
