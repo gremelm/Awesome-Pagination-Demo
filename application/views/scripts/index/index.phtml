@@ -5,5 +5,41 @@
 <p>Fry! Stay back! He's too powerful! They're like sex, except I'm having them! Does anybody else feel jealous and aroused and worried? You wouldn't. Ask anyway! We don't have a brig.</p>
 
 <div class="paged-data-container">
-    <?php echo $this->render('index/index.ajax.phtml') ?>
+    <?php $paginationControl = $this->paginationControl($this->paginator, 'All', '_partials/paginator.phtml') ?>
+
+    <div class="pagination-control">
+        <?php echo $paginationControl ?>
+    </div>
+
+    <div class="paged-data">
+        <?php if (count($this->paginator)) : ?>
+        <table class="data">
+            <thead>
+                <tr>
+                    <th>Foo</th>
+                    <th>Bar</th>
+                    <th>Baz</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                /* @var $foo Application_Model_Foo */
+                foreach ($this->paginator as $foo) :
+                ?>
+                <tr>
+                    <td><?php echo $this->escape($foo->getFoo()) ?></td>
+                    <td><?php echo $this->escape($foo->getBar()) ?></td>
+                    <td><?php echo $this->escape($foo->getBaz()) ?></td>
+                </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+        <?php else : ?>
+        <p class="notice">No items found</p>
+        <?php endif ?>
+    </div>
+
+    <div class="pagination-control">
+        <?php echo $paginationControl ?>
+    </div>
 </div>
