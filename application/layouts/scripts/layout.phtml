@@ -5,7 +5,7 @@
         echo $this->headMeta()
                 ->prependHttpEquiv('Content-Type', 'text/html; charset=' . $this->getEncoding()) ?>
         
-        <base href="<?php echo $this->serverUrl(), $this->baseUrl(), '/' ?>">
+        <base href="<?php echo $this->serverUrl(), $this->baseUrl() ?>/">
         
         <?php echo $this->headTitle('Awesome Pagination')
                 ->setSeparator(' - ') ?>
